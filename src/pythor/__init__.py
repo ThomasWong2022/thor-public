@@ -1,5 +1,5 @@
-### Import useful objects
 
+__version__ = "0.1.0"
 
 ### Benchmark trading strategies and performance
 from .util import strategy_metrics
