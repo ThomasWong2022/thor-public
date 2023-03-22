@@ -4,19 +4,19 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='example_pypi_package',
-    author='Tom Chen',
-    author_email='tomchen.org@gmail.com',
-    description='Example PyPI (Python Package Index) Package',
-    keywords='example, pypi, package',
+    name='thor_public',
+    author='Thomas Wong',
+    author_email='mw4315@ic.ac.uk',
+    description='AutoML tools for Tabular Dataset',
+    keywords='autoML',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/tomchen/example_pypi_package',
+    url='https://github.com/ThomasWong2022/thor-public',
     project_urls={
-        'Documentation': 'https://github.com/tomchen/example_pypi_package',
+        'Documentation': 'https://github.com/ThomasWong2022/thor-public',
         'Bug Reports':
-        'https://github.com/tomchen/example_pypi_package/issues',
-        'Source Code': 'https://github.com/tomchen/example_pypi_package',
+        'https://github.com/ThomasWong2022/thor-public/issues',
+        'Source Code': 'https://github.com/ThomasWong2022/thor-public',
         # 'Funding': '',
         # 'Say Thanks!': '',
     },
