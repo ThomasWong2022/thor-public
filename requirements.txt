@@ -1,0 +1,14 @@
+setuptools
+joblib
+numpy
+pandas
+scipy
+scikit-learn
+torch
+signatory
+xgboost
+lightgbm
+catboost
+optuna
+cupy 
+cuml

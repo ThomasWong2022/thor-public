@@ -30,9 +30,6 @@ import numpy as np
 import os.path
 import datetime
 
-import requests
-
-
 #### Read a single year price data from CRSP
 def read_crsp_price_data(folder, year):
     ## Mapping CRSP columns

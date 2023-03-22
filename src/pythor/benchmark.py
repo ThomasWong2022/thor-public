@@ -22,6 +22,13 @@ import numpy as np
 import joblib, os, shutil, datetime
 
 
+
+import logging, gc
+
+if torch.cuda.is_available():
+    import cupy as cp
+
+
 from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import KFold, GroupKFold, GroupShuffleSplit
 
@@ -33,10 +40,6 @@ from catboost import CatBoostRegressor
 import lightgbm, xgboost, catboost
 import torch
 
-import logging, gc
-
-if torch.cuda.is_available():
-    import cupy as cp
 
 
 from .util import align_features_target, RollingTSTransformer, GroupedTimeSeriesSplit

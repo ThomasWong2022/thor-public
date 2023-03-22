@@ -7,7 +7,7 @@ setuptools.setup(
     name="thor_public",
     author="Thomas Wong",
     author_email="mw4315@ic.ac.uk",
-    description="AutoML tools for Tabular Dataset",
+    description="AutoML tools for Tabular Datasets",
     keywords="autoML",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -16,14 +16,12 @@ setuptools.setup(
         "Documentation": "https://github.com/ThomasWong2022/thor-public",
         "Bug Reports": "https://github.com/ThomasWong2022/thor-public/issues",
         "Source Code": "https://github.com/ThomasWong2022/thor-public",
-        # 'Funding': '',
-        # 'Say Thanks!': '',
     },
     package_dir={"": "src"},
     packages=setuptools.find_packages(where="src"),
     classifiers=[
         # see https://pypi.org/classifiers/
-        "Development Status :: 5 - Production/Stable",
+        "Development Status :: 3 - Alpha",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Build Tools",
         "Programming Language :: Python :: 3",
@@ -38,12 +36,5 @@ setuptools.setup(
     # install_requires=['Pillow'],
     extras_require={
         "dev": ["check-manifest"],
-        # 'test': ['coverage'],
     },
-    # entry_points={
-    #     'console_scripts': [  # This can provide executable scripts
-    #         'run=examplepy:main',
-    # You can execute `run` in bash to run `main()` in src/examplepy/__init__.py
-    #     ],
-    # },
 )
