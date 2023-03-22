@@ -28,6 +28,37 @@ A new method to combine predictions from machine learning model using well-known
 An enhanced implementation of trend following strategies with improved robustness and lower risks than the standard implementation of moving averages. Offer a better way to replicate trend following strategies and build new strategies that are less correlated to existing ones. 
 
 
+### Docker 
+
+As this packages used various machine learning and CUDA libaries for GPU support, we recommend to use docker to manage the dependencies. 
+
+The image is now uploaded on Docker Hub 
+
+```bash
+docker pull docker push thomaswong2023/thor-public
+
+```
+
+
+Example code to build and run a docker image which has the package and dependencies.
+
+```bash
+docker build -t thor:public . 
+docker run --gpus device=all -it -d --rm --name thor-public-example thor:public bash
+
+```
+
+
+### PyPI 
+
+This project is also on PyPI.[thor-public](https://pypi.org/project/thor-public/)
+
+Install the package with the following command. Dependencies are not installed with the package 
+
+```bash
+pip install thor-public -r requirements.txt
+
+```
 
 
 ## Citation
