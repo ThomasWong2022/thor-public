@@ -32,7 +32,7 @@ An enhanced implementation of trend following strategies with improved robustnes
 
 As this packages used various machine learning and CUDA libaries for GPU support, we recommend to use docker to manage the dependencies. 
 
-The image is now uploaded on Docker Hub 
+The image is now uploaded on Docker Hub [thor-public](https://hub.docker.com/repository/docker/thomaswong2023/thor-public/general)
 
 ```bash
 docker pull docker push thomaswong2023/thor-public
