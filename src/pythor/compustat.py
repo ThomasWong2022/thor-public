@@ -120,7 +120,6 @@ def read_crsp_price(
         inds=None,
         subinds=None,
     ):
-
         if market == "Numerai":
             numerai_tickers = pd.read_csv(f"{numeraitable}").drop_duplicates(
                 subset=["permno", "bloomberg_ticker"]
@@ -205,7 +204,6 @@ def read_crsp_price(
     ]
 
     for year in range(startyear, endyear + 1):
-
         ### Filtering is based on previous year average market cap greater than threshold
         pricedf = read_crsp_price_data(f"{basefolder}/{crspfolder}", year)
 
@@ -294,7 +292,6 @@ def read_compustat_us_fundamentals(
     selected_gvkeys=None,
     debug=False,
 ):
-
     funda_years = list()
 
     for datayear in range(startyear - 1, endyear + 1, 1):
@@ -526,7 +523,6 @@ def merge_compustat_dataset(
     quantile=5,
     debug=False,
 ):
-
     price_cols = list(pricedf.columns)
     selected_cols = list(pricedf.columns)
 
@@ -636,7 +632,6 @@ def merge_compustat_dataset(
 ###
 ###
 def read_compustat_price_year(folder, market, year):
-
     ## Read price data from Compustat
     column_map = {
         "datadate": "date",
@@ -732,7 +727,6 @@ def Compustat_CRSP_Data(
     debug=False,
     identifier="permno",
 ):
-
     pricedf = read_crsp_price(
         basefolder=basefolder,
         linktable=linktable,
@@ -775,7 +769,6 @@ def Compustat_CRSP_Data(
         has_shortint_data = True
 
     if use_fundamentals:
-
         fundadf = read_compustat_us_fundamentals(
             fundamentals_folder=f"{basefolder}/{fundamentals_folder}",
             startyear=startyear,
@@ -788,7 +781,6 @@ def Compustat_CRSP_Data(
             has_funda_data = True
 
     if use_option_volume:
-
         selected_secids = pricedf["secid"].dropna().unique()
 
         optionsdf = read_optionmetrics_us_volatility_surface(

@@ -22,6 +22,7 @@ import logging
 
 logger = logging.getLogger("Numerai")
 
+
 ### Create Hyper-parameter space for optuna
 ### Extract parameter space that needs to be optimised from the config dictionary
 def create_optuna_space(config_dictionary, trial):
@@ -41,7 +42,6 @@ def create_parameters_sets(
     config_dictionary,
     seed=0,
 ):
-
     ### Feature Engineering
     feature_eng_parameters = {}
     for k, v in config_dictionary["feature_eng"]["parameters"].items():
@@ -68,7 +68,6 @@ def create_optuna_numerai_objective(
     config_dictionary, numerai_files, seed=0, debug=False
 ):
     def objective(trial):
-
         with open(numerai_files["feature_metadata"], "r") as f:
             feature_metadata = json.load(f)
         if config_dictionary["model_params"]["feature_sets"] == "v4":
@@ -164,7 +163,6 @@ def optuna_search(
     seed=0,
     debug=False,
 ):
-
     optuna.logging.set_verbosity(optuna.logging.WARNING)
 
     numerai_objective = create_optuna_numerai_objective(
@@ -189,7 +187,6 @@ def train_best_model_optuna(
     seed=0,
     debug=False,
 ):
-
     resample_seed = int(
         seed % config_dictionary["model_params"]["validate_resample_freq"]
     )
@@ -259,7 +256,6 @@ def numerai_optimisation_pipeline_optuna(
     timeout=2000,
     debug=False,
 ):
-
     ## Search for optimal hyper-parameters
     if run_optimisation:
         best_parameters, best_value = optuna_search(

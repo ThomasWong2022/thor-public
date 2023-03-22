@@ -1,4 +1,3 @@
-
 __version__ = "0.1.0"
 
 ### Benchmark trading strategies and performance

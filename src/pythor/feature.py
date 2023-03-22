@@ -32,7 +32,6 @@ import logging
 logger = logging.getLogger("Numerai")
 
 
-
 """
 Feature Engineering used in Numerai Thesis 
 """
@@ -57,7 +56,6 @@ class NumeraiTransformer(TransformerMixin, BaseEstimator):
 
     ## Transform Numerai Features with mean zero (-2,-1,0,1,2)
     def transform(self, X, is_train=True):
-
         ## Numpy Random Number Generator
         rng = np.random.default_rng(self.seed)
 
@@ -160,8 +158,6 @@ def features_transform_batch(transformer, data, is_train=True):
     return transformer, transformed_features
 
 
-
-
 def benchmark_features_transform(
     X_train,
     y_train,
@@ -172,7 +168,6 @@ def benchmark_features_transform(
     feature_eng_parameters=None,
     debug=False,
 ):
-
     ### Numerai
     if feature_eng in [
         "numerai",
@@ -184,7 +179,6 @@ def benchmark_features_transform(
                 "seed": 10,
             }
         transformer = NumeraiTransformer(**feature_eng_parameters)
-
 
     if feature_eng is not None:
         extracted_features_train = transformer.transform(X_train, is_train=True)

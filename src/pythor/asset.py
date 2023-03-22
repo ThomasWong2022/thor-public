@@ -43,7 +43,6 @@ def Compustat_CRSP_Data(
     debug=False,
     identifier="permno",
 ):
-
     pricedf = read_crsp_price(
         folder=folder,
         linktable=linktable,
@@ -86,7 +85,6 @@ def Compustat_CRSP_Data(
         has_shortint_data = True
 
     if use_fundamentals:
-
         fundadf = read_compustat_us_fundamentals(
             fundamentals_folder=fundamentals_folder,
             startyear=startyear,
@@ -99,7 +97,6 @@ def Compustat_CRSP_Data(
             has_funda_data = True
 
     if use_option_volume:
-
         selected_secids = pricedf["secid"].dropna().unique()
 
         optionsdf = read_optionmetrics_us_volatility_surface(
@@ -148,7 +145,6 @@ def Compustat_Data(
     quantile=5,
     debug=False,
 ):
-
     pricedf = read_compustat_price(
         folder=folder,
         market=market,

@@ -23,7 +23,6 @@ import cupy as cp
 
 class TabularModel:
     def __init__(self, nn_model, config):
-
         """
         Args:
             nn_model (LightningModule): Neural Networks implmented as a LightningModule
@@ -35,7 +34,6 @@ class TabularModel:
         seed_everything(config.get("seed", 0), workers=True)
 
     def train(self, X_train, y_train, X_validate, y_validate):
-
         self.config["input_shape"] = X_train.shape[1]
         self.config["output_shape"] = y_train.shape[1]
 
@@ -98,7 +96,6 @@ class TabularModel:
 
 class MLP(LightningModule):
     def __init__(self, config):
-
         super().__init__()
         self.config = config
 
@@ -157,7 +154,6 @@ class MLP(LightningModule):
 
 class LSTM_Tabular(LightningModule):
     def __init__(self, config):
-
         super().__init__()
         self.config = config
         self.lstm = nn.LSTM(
@@ -237,7 +233,6 @@ class TimeSeriesDataset(Dataset):
         return self.X.shape[0] - (self.lookback - 1)
 
     def __getitem__(self, idx):
-
         if torch.is_tensor(idx):
             idx = idx.tolist()
         if self.y is not None:
@@ -250,7 +245,6 @@ class TimeSeriesDataset(Dataset):
 
 class TimeSeriesModel:
     def __init__(self, nn_model, config):
-
         """
         Args:
             nn_model (LightningModule): Neural Networks implmented as a LightningModule
@@ -262,7 +256,6 @@ class TimeSeriesModel:
         seed_everything(config.get("seed", 0), workers=True)
 
     def train(self, X_train, y_train, X_validate, y_validate):
-
         self.config["input_shape"] = X_train.shape[1]
         self.config["output_shape"] = y_train.shape[1]
 
@@ -324,7 +317,6 @@ class TimeSeriesModel:
 
 class LSTM(LightningModule):
     def __init__(self, config):
-
         super().__init__()
         self.config = config
         self.lstm = nn.LSTM(

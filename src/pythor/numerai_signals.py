@@ -52,7 +52,6 @@ class NumeraiSignatureTransformer(TransformerMixin, BaseEstimator):
             )
 
     def transform(self, X):
-
         signature_outputs = list()
         for lookback in self.lookbacks:
             signature_outputs.append(
@@ -73,11 +72,9 @@ class NumeraiStatsTransformer(TransformerMixin, BaseEstimator):
             52,
         ],
     ):
-
         self.lookbacks = lookbacks
 
     def transform(self, X):
-
         stats_outputs = list()
         for lookback in self.lookbacks:
             for operation in ["mean", "std", "skew", "kurt"]:

@@ -80,7 +80,6 @@ Dynamic Model Selection
 
 
 def dynamic_model_selection_masks(performances, gap=6, lookback=52, top_models=1):
-
     mean = performances.shift(gap).rolling(lookback).mean()
     volatility = performances.shift(gap).rolling(lookback).std()
     skew = performances.shift(gap).rolling(lookback).skew()
@@ -149,7 +148,6 @@ def dynamic_model_selection_masks(performances, gap=6, lookback=52, top_models=1
 
 
 def walk_forward_dynamic_models(df_list):
-
     Model_Sets = dict()
     Imputed_Models = dict()
 
@@ -218,7 +216,6 @@ def walk_forward_dynamic_models(df_list):
         "Standard",
         "Average",
     ]:
-
         models_over_time = pd.concat(Model_Sets[key], axis=1)
         # models_over_time = (
         # models_over_time.transpose()
@@ -242,7 +239,6 @@ def create_leaderboard(
     model_no_lower=0,
     model_no_upper=1e8,
 ):
-
     ## Load csv files
     performances_files = sorted(glob.glob(f"{performances_folder}/{searchkey}.csv"))
     models_list = list()

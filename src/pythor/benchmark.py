@@ -45,6 +45,7 @@ from .neural import TabularModel, MLP, LSTM_Tabular
 
 # ## Persistence of ML models
 
+
 ### Save Best Model using method provided
 def save_best_model(model, model_type, outputpath):
     if model_type in [
@@ -129,7 +130,6 @@ def benchmark_neural_model(
     additional_hyper=None,
     debug=False,
 ):
-
     gc.collect()
 
     ## Initialise and Train Models
@@ -333,7 +333,6 @@ def benchmark_pipeline(
     additional_hyper=None,
     debug=False,
 ):
-
     if debug:
         print(f"Dataset Sizes {features.shape} {target.shape} {groups.shape}")
 
@@ -375,7 +374,6 @@ def benchmark_pipeline(
     parameters = dict()
 
     for train_index, test_index in tscv.split(features, groups=groups):
-
         ## Get Trained and Test Data
         if model_params["cross_validation"] == "GroupedTimeSeriesSplit":
             X_train, X_test = features.loc[train_index, :], features.loc[test_index, :]
@@ -437,7 +435,6 @@ def benchmark_pipeline(
             "lightgbm",
             "xgboost",
         ]:
-
             ### Train Tabular Models
             reg, pred = benchmark_tree_model(
                 extracted_features_train,
@@ -457,7 +454,6 @@ def benchmark_pipeline(
             "Numerai-LSTM",
             "tabnet",
         ]:
-
             ### Train Tabular Models
             reg, pred = benchmark_neural_model(
                 extracted_features_train,

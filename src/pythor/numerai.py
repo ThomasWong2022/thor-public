@@ -40,6 +40,7 @@ else:
 Helper Functions to convert Numerai Era and Datetime 
 """
 
+
 ## Shifting Numerai Era
 def shift_era(era, gap=6):
     new_era_int = int(era) + gap
@@ -137,7 +138,7 @@ def load_numerai_data_era(
     ## For Numerai Classic Tournament, v4 dataset
     else:
         features = df[feature_col].fillna(2) - 2
-    
+
     target_median = df[target_col].median()
     targets = df[target_col].fillna(target_median) - target_median
     ## Group column has to be pd.Series for time-series cross validation
@@ -159,14 +160,12 @@ def load_numerai_data(
     startera=None,
     endera=None,
 ):
-
     if data_version in [
         "v4",
         "v4.1",
         "v5",
         "v6",
     ]:
-
         features_list = list()
         targets_list = list()
         groups_list = list()
@@ -332,7 +331,9 @@ def predict_numerai(
             gbm_start_iteration = parameters["parameters"]["additional"].get(
                 "gbm_start_iteration", 0
             )
-        start_iteration = min(gbm_start_iteration, int(trained_model.num_trees() * 0.75))
+        start_iteration = min(
+            gbm_start_iteration, int(trained_model.num_trees() * 0.75)
+        )
         predictions_raw = trained_model.predict(
             features, start_iteration=start_iteration
         )
@@ -399,7 +400,6 @@ def predict_numerai_multiple(
     embargo=26,
     gbm_start_iteration=0,
 ):
-
     features, targets, groups, weights = load_numerai_data(
         filename,
         target_col=target_col,
@@ -439,7 +439,6 @@ def predict_numerai_multiple(
             print(modelname, test_start)
 
         if required_index.shape[0] > 0:
-
             prediction_df = predict_numerai(
                 features.loc[required_index],
                 targets.loc[required_index],
@@ -575,7 +574,6 @@ def score_numerai(
     return prediction_df, correlations_by_era_all
 
 
-
 """
 Linear Factor Model
 Factor Timing
@@ -586,7 +584,6 @@ rawdata: pd.DataFrame: Numerai dataset with columns containing the 1149 features
 def numerai_feature_correlation_matrix(
     rawdata, feature_col=None, target_col_name=None, era_col="era"
 ):
-
     output = dict()
     for i, df in rawdata.groupby(era_col):
         corr_dict = dict()
@@ -610,7 +607,6 @@ def numerai_feature_momentum(
     update_correlation_mtx=True,
     feature_col=None,
 ):
-
     if update_correlation_mtx:
         ## Calculate Correlation Matrix
         for i in range(int(startera), int(endera) + 1):
@@ -759,6 +755,7 @@ Run Model Performances for models trained with a single ML model
 
 """
 
+
 def dynamic_feature_neutralisation(
     prediction_df,
     features_raw,
@@ -773,7 +770,6 @@ def dynamic_feature_neutralisation(
     proportion=1,
     debug=False,
 ):
-
     if features_optimizer is None:
         features_optimizer = features_raw.columns[:cutoff]
 
@@ -964,8 +960,10 @@ def save_model_performance_test(
     debug=False,
     gbm_start_iteration=0,
 ):
-
-    (average_prediction_df, prediction_df_list,) = predict_numerai_multiple(
+    (
+        average_prediction_df,
+        prediction_df_list,
+    ) = predict_numerai_multiple(
         Numerai_Model_Names,
         feature_corr,
         filename=data_file,
@@ -982,7 +980,12 @@ def save_model_performance_test(
     MODEL_NAME = Numerai_Model_Names[0].split(".parameters")[0].split("/")[-1]
     MODEL_NAME = MODEL_NAME + f"_{len(Numerai_Model_Names)}"
 
-    (features, targets, groups, weights,) = load_numerai_data(
+    (
+        features,
+        targets,
+        groups,
+        weights,
+    ) = load_numerai_data(
         data_file,
         resample_freq=1,
         startera=startera,
@@ -1032,7 +1035,6 @@ def run_numerai_models_performances(
     target_col=["target"],
     gbm_start_iteration=0,
 ):
-
     ## Calculate Starting Era
     parametername = Numerai_Model_Names[0]
     no_models = len(Numerai_Model_Names)
