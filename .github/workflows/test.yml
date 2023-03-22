@@ -3,12 +3,10 @@ name: Test
 on:
   push:
     branches:
-      - main
-      - master
+      - nonexisting
   pull_request:
     branches:
-      - main
-      - master
+      - nonexisting
 
 jobs:
   build:
