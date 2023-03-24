@@ -44,12 +44,12 @@ docker run --gpus device=all -it -d --rm --name thor-public-example thomaswong20
 
 ### PyPI 
 
-This project is also on [PyPI](https://pypi.org/project/thor-public/).
+This project is also on [PyPI](https://pypi.org/project/thorml/).
 
 Install the package with the following command. Dependencies are not installed with the package 
 
 ```bash
-pip install thor-public -r requirements.txt
+pip install thorml -r requirements.txt
 
 ```
 

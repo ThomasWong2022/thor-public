@@ -1,7 +1,20 @@
 [build-system]
 requires = ["setuptools>=46.4.0", 
             "wheel", 
+            "joblib",
             "numpy",
             "pandas",
+            "scipy",
+            "scikit-learn",
+            "optuna",
             ]
 build-backend = "setuptools.build_meta"
+[options.extras_require]
+cuda = [
+    "cupy",
+    "cuml",
+    "torch",
+    "lightgbm --install-option=--cuda",
+    "xgboost",
+    "catboost",
+]
