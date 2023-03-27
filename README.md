@@ -1,5 +1,7 @@
 # THOR: Time-Varying High-dimensional Ordinal Regression 
 
+[![Downloads](https://static.pepy.tech/badge/thorml)](https://pepy.tech/project/thorml)
+
 THOR is a new autoML tool for temporal tabular datasets and time series. It handles high dimensional datasets with distribution shifts better than other tools. Inspired by the Numerai competiton, THOR has evolved from a specific tool for Numerai competition into a general ML pipeline which has many applications in finance and healthcare. 
 
 
