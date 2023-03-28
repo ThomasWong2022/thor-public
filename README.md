@@ -36,9 +36,11 @@ As this packages used various machine learning and CUDA libaries for GPU support
 
 The image is now uploaded on [Docker Hub](https://hub.docker.com/repository/docker/thomaswong2023/thor-public/general).
 
+The following Docker images contains all the dependencies used in this tool. 
+
 ```bash
-docker pull thomaswong2023/thor-public
-docker run --gpus device=all -it -d --rm --name thor-public-example thomaswong2023/thor:public bash
+docker pull thomaswong2023/thor-public:deps
+docker run --gpus device=all -it -d --rm --name thor-public-example thomaswong2023/thor:public:deps bash
 
 ```
 
