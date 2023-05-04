@@ -22,9 +22,6 @@ A new method which combines classical and machine learning techniques for featur
 Apply dynamic hyper-parameter optimisation methods under incremental learning framework for temporal tabular and multi-variate timeseries datasets. 
 
 
-
-
-
 ## How to get THOR running on my computers 
 
 
@@ -53,6 +50,29 @@ Install the package with the following command. Dependencies are not installed w
 pip install thorml -r requirements.txt
 
 ```
+
+
+
+## Citation
+If you are using this package in your scientific work, we would appreciate citations to the following preprint on arxiv.
+
+[Robust incremental learning pipelines for temporal tabular datasets with distribution shifts](https://arxiv.org/abs/2303.07925)
+
+Bibtex entry:
+```
+@misc{wong2023robust,
+      title={Robust incremental learning pipelines for temporal tabular datasets with distribution shifts}, 
+      author={Thomas Wong and Mauricio Barahona},
+      year={2023},
+      eprint={2303.07925},
+      archivePrefix={arXiv},
+      primaryClass={cs.LG}
+}
+```
+
+
+
+
 
 
 
