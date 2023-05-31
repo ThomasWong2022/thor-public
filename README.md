@@ -5,26 +5,6 @@
 THOR is a new autoML tool for temporal tabular datasets and time series. It handles high dimensional datasets with distribution shifts better than other tools. It makes use of the latest research results from incremental learning to improve robustness of machine learning methods. 
 
 
-## Gradient Boosting Decision Trees
-
-Customised LightGBM-based Gradient Boosting Decision Trees models for temporal tabular datasets.
-
-## Deep Learning Models 
-
-A novel deep learning model for temporal tabular datasets, which complements well with the above GBDT-based models.
-
-## TimeSeries Hybrid 
-
-A new method which combines classical and machine learning techniques for feature engineering and sequence modelling. A hybrid approach which demonstrate robust performances for high dimensional time-series.
-
-## Dynamic Hyperopt 
-
-Apply dynamic hyper-parameter optimisation methods under incremental learning framework for temporal tabular and multi-variate timeseries datasets. 
-
-
-## How to get THOR running on my computers 
-
-
 ### Docker 
 
 As this packages used various machine learning and CUDA libaries for GPU support, we recommend to use docker to manage the dependencies. 
@@ -56,17 +36,17 @@ pip install thorml -r requirements.txt
 ## Citation
 If you are using this package in your scientific work, we would appreciate citations to the following preprint on arxiv.
 
-[Robust incremental learning pipelines for temporal tabular datasets with distribution shifts](https://arxiv.org/abs/2303.07925)
+[Dynamic Feature Projection and model selection methods for temporal tabular datasets with regime changes](https://arxiv.org/abs/2301.00790)
 
 Bibtex entry:
 ```
-@misc{wong2023robust,
-      title={Robust incremental learning pipelines for temporal tabular datasets with distribution shifts}, 
+@misc{wong2023dynamic,
+      title={Dynamic Feature Engineering and model selection methods for temporal tabular datasets with regime changes}, 
       author={Thomas Wong and Mauricio Barahona},
       year={2023},
-      eprint={2303.07925},
+      eprint={2301.00790},
       archivePrefix={arXiv},
-      primaryClass={cs.LG}
+      primaryClass={q-fin.CP}
 }
 ```
 
